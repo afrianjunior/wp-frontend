@@ -21,7 +21,6 @@
 }
 
 * {
-  font-family: var(--font-family-primary);
   font-size: var(--main-font-size);
   text-decoration: none;
 }
@@ -39,6 +38,10 @@ p, span, h1, h2, h3, h4, div {
 }
 
 /* Utilities */
+
+.image-cover {
+  object-fit: cover;
+}
 
 .capitalize {
   text-transform: capitalize;

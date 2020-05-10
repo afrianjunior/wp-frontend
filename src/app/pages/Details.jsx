@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { useQuery } from '@apollo/react-hooks'
-import { Div, Text, Input, Icon } from 'atomize'
+import { Link } from 'react-router-dom'
+import { Div, Text, Button, Icon } from 'atomize'
 import { PokemonCard, Label } from '@/app/components'
 
 import POKEMON_QUERY from '@/gql/pokemonQuery'
@@ -45,7 +46,6 @@ function Details ({ location }) {
         m={{ b: '.5rem' }}
         bg="gray100"
         rounded="md"
-        cursor="pointer"
       >
         <Text tag="p">
           Weaknesses: <Weaknesses value={pokemon.weaknesses} />
@@ -54,6 +54,22 @@ function Details ({ location }) {
           Resistant: <Resistant value={pokemon.resistant} />
         </Text>
       </Div>
+      <Link to="/">
+        <Button
+          prefix={
+            <Icon
+              name="LongLeft"
+              size="16px"
+              color="white"
+              m={{ r: '1rem' }}
+            />
+          }
+          shadow="3"
+          hoverShadow="4"
+        >
+          Back
+        </Button>
+      </Link>
     </Div>
   )
 }
