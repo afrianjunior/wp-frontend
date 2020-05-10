@@ -36,6 +36,7 @@ function PokemonCard ({ name, classification, image, types }) {
       textAlign="center"
       bg="gray100"
       rounded="md"
+      cursor="pointer"
     >
       <Image
         src={image}
