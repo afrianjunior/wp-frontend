@@ -45,7 +45,10 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Warung Pintar Test'
+      title: 'Warung Pintar Test',
+      meta: {
+        viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no'
+      }
     }),
     new Dotenv({
       path: './.env'
