@@ -6,7 +6,7 @@ const Dotenv = require('dotenv-webpack')
 module.exports = {
   entry: {
     app: './src/index.jsx',
-    vendors: ['react', 'react-dom', 'react-router-dom', 'styled-components', 'apollo-boost', 'graphql']
+    vendors: ['react', 'react-dom', 'react-router-dom', 'styled-components']
   },
   output: {
     path: path.resolve(__dirname, 'dist')
@@ -40,9 +40,7 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx'],
     alias: {
-      '@': path.resolve(__dirname, 'src'),
-      api: path.resolve(__dirname, 'src/common/api'),
-      ui: path.resolve(__dirname, 'src/ui')
+      '@': path.resolve(__dirname, 'src')
     }
   },
   plugins: [
