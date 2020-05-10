@@ -1,0 +1,29 @@
+{
+  "presets": [
+    [
+      "@babel/preset-env", {
+        "useBuiltIns": "entry",
+        "corejs": 3,
+        "modules": false,
+        "targets": {
+          "esmodules": true
+        }
+      }
+    ],
+    "@babel/preset-react"
+  ],
+  "plugins": [
+    "babel-plugin-styled-components",
+    [
+      "@babel/plugin-proposal-decorators", {
+        "legacy": true
+      }
+    ],
+    [
+      "@babel/plugin-proposal-class-properties", {
+        "loose": true
+      }
+    ],
+    "@babel/plugin-syntax-dynamic-import"
+  ]
+}
