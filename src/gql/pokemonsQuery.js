@@ -7,10 +7,7 @@ export default gql`
       name
       image
       types
-      number
       classification
-      weaknesses
-      resistant
     }
   }
 `
