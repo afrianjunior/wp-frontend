@@ -28,7 +28,7 @@ function PokemonCard ({ name, classification, image, types }) {
       p="1rem"
       m={{ b: '.5rem' }}
       textAlign="center"
-      bg="gray100"
+      bg="gray200"
       rounded="md"
     >
       <Image
