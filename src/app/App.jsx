@@ -1,17 +1,14 @@
-import React, { Suspense } from 'react'
-import { Layout, Container } from 'ui'
+import React, { Suspense, lazy } from 'react'
 import { BrowserRouter as Router, Switch, Route, withRouter } from 'react-router-dom'
 
-const Home = React.lazy(() => import('./pages/Home'))
-const Details = React.lazy(() => import('./pages/Details'))
+const Home = lazy(() => import('./pages/Home'))
+const Details = lazy(() => import('./pages/Details'))
 
-export const PublicRoute = props => {
+const Container = ({ children }) => {
   return (
-    <React.Fragment>
-      <Container>
-        <Route {...props} />
-      </Container>
-    </React.Fragment>
+    <div className="container">
+      {children}
+    </div>
   )
 }
 
@@ -19,12 +16,12 @@ const AppStackRoute = withRouter(() => {
   return (
     <React.Fragment>
       <Suspense fallback={<div>Loading</div>}>
-        <Layout>
+        <Container>
           <Switch>
-            <PublicRoute exact path="/" component={Home} />
-            <PublicRoute exact path="/details" component={Details} />
+            <Route exact path="/" component={Home} />
+            <Route path="/details" component={Details} />
           </Switch>
-        </Layout>
+        </Container>
       </Suspense>
     </React.Fragment>
   )
