@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom'
 import { Row, Col } from 'atomize'
 
 import PokemonCard from './PokemonCard'
@@ -12,7 +13,9 @@ function Pokemons ({ pokemons }) {
   function RenderPokemons () {
     return pokemons.map(pokemon => (
       <Col key={pokemon.id} size={_COLUMN_SIZE_SETTING}>
-        <PokemonCard {...pokemon} />
+        <Link to={`/details?id=${pokemon.id}`}>
+          <PokemonCard {...pokemon} />
+        </Link>
       </Col>
     ))
   }
