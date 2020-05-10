@@ -1,12 +1,13 @@
 import React from 'react'
-import { MainProvider } from './context/mainContext'
+import client from '@/lib/gql-client'
+import { ApolloProvider } from '@apollo/react-hooks'
 
 import App from './app/App'
 
 export default function Root () {
   return (
-    <MainProvider>
+    <ApolloProvider client={client}>
       <App />
-    </MainProvider>
+    </ApolloProvider>
   )
 }
