@@ -11,8 +11,8 @@ const _COLUMN_SIZE_SETTING = {
 function Pokemons ({ pokemons }) {
   function RenderPokemons () {
     return pokemons.map(pokemon => (
-      <Col size={_COLUMN_SIZE_SETTING}>
-        <PokemonCard key={pokemon.id} {...pokemon} />
+      <Col key={pokemon.id} size={_COLUMN_SIZE_SETTING}>
+        <PokemonCard {...pokemon} />
       </Col>
     ))
   }
