@@ -1,5 +1,6 @@
 import React, { useState, useCallback } from 'react'
 import { useQuery } from '@apollo/react-hooks'
+import { Link } from 'react-router-dom'
 import POKEMONS_QUERY from '@/gql/pokemonsQuery'
 import { Div, Text, Input, Icon } from 'atomize'
 import { Pokemons, Error } from '@/app/components'
@@ -80,7 +81,7 @@ function Home () {
 
       {error && <Error message="Something error when fetch pokemons, please check your internet connection." />}
 
-      {!data ? 'Fetching...' : <Pokemons pokemons={filterPokemons(data.pokemons)} />}
+      {!data ? 'Fetching...' : <Pokemons pokemons={filterPokemons(data.pokemons)} redirect={Link} />}
 
       {data && loading ? <Text
         tag="div"

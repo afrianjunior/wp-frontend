@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Link } from 'react-router-dom'
 import { Row, Col } from 'atomize'
 
 import PokemonCard from './PokemonCard'
@@ -9,7 +8,9 @@ const _COLUMN_SIZE_SETTING = {
   xs: 12, lg: 6
 }
 
-function Pokemons ({ pokemons }) {
+function Pokemons ({ pokemons, redirect }) {
+  const Link = redirect
+
   function RenderPokemons () {
     return pokemons.map(pokemon => (
       <Col key={pokemon.id} size={_COLUMN_SIZE_SETTING}>
@@ -28,7 +29,11 @@ function Pokemons ({ pokemons }) {
 }
 
 Pokemons.propTypes = {
-  pokemons: PropTypes.array
+  pokemons: PropTypes.array,
+  redirect: PropTypes.oneOfType([
+    PropTypes.node,
+    PropTypes.func
+  ])
 }
 
 export default Pokemons
