@@ -22,16 +22,16 @@ $ yarn dev
 
 Server run on port 3000
 
-### build
+### Build and run production
 
 ```bash
-$ yarn build
+$ yarn build && yarn start
 ```
 
-### Run Production
+### Run test
 
 ```bash
-$ yarn start
+$ yarn test
 ```
 
 ### If you want to run with Docker
