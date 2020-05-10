@@ -7,9 +7,10 @@ function Error ({ message }) {
     <Div
       w="100%"
       rounded="sm"
-      bg="red900"
+      bg="danger900"
       textColor="gray100"
       p={{ x: '0.75rem', y: '0.25rem' }}
+      m={{ b: '10px' }}
     >
       <Text>{message}</Text>
     </Div>
