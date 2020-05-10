@@ -1,6 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Div, Image, Text, Tag } from 'atomize'
+import { Div, Image, Text } from 'atomize'
+
+import Label from './Label'
 
 function PokemonCard ({ name, classification, image, types }) {
   function Types () {
@@ -11,17 +13,9 @@ function PokemonCard ({ name, classification, image, types }) {
         {
           types.map((type, key) => {
             return (
-              <Tag
-                key={`${type}-${key}`}
-                bg="info900"
-                textColor="gray100"
-                p={{ x: '0.75rem', y: '0.25rem' }}
-                m={{ r: '0.5rem', b: '0.5rem' }}
-                rounded="lg"
-                textSize="tiny"
-              >
+              <Label key={`${type}-${key}`}>
                 {type}
-              </Tag>
+              </Label>
             )
           })
         }
