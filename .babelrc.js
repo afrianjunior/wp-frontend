@@ -1,10 +1,12 @@
-{
+const isTest = process.env.NODE_ENV === 'test'
+
+module.exports = {
   "presets": [
     [
       "@babel/preset-env", {
         "useBuiltIns": "entry",
         "corejs": 3,
-        "modules": false,
+        "modules": isTest ? 'commonjs' : false,
         "targets": {
           "esmodules": true
         }
