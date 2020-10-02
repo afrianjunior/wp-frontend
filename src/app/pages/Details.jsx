@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { memo, useEffect } from 'react'
 import { useQuery } from '@apollo/react-hooks'
 import { Link } from 'react-router-dom'
 import { Div, Text, Button, Icon } from 'atomize'
@@ -74,4 +74,4 @@ function Details ({ location }) {
   )
 }
 
-export default Details
+export default memo(Details)
