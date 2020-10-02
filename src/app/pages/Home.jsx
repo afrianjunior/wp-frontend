@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react'
+import React, { memo, useState, useCallback } from 'react'
 import { useQuery } from '@apollo/react-hooks'
 import { Link } from 'react-router-dom'
 import POKEMONS_QUERY from '@/gql/pokemonsQuery'
@@ -94,4 +94,4 @@ function Home () {
   )
 }
 
-export default Home
+export default memo(Home)
