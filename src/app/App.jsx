@@ -14,7 +14,7 @@ const Container = ({ children }) => {
 
 const AppStackRoute = withRouter(() => {
   return (
-    <React.Fragment>
+    <>
       <Suspense fallback={<div>Loading</div>}>
         <Container>
           <Switch>
@@ -23,7 +23,7 @@ const AppStackRoute = withRouter(() => {
           </Switch>
         </Container>
       </Suspense>
-    </React.Fragment>
+    </>
   )
 })
 
